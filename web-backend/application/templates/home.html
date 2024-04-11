@@ -1,0 +1,39 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% load static %}
+
+{% block files %}
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div>
+    <div class="text-center">
+      <h2>Добро пожаловать на наш сайт!</h2>
+      <p></p>
+    </div>
+    <div>
+      <h2>Наша команда:</h2>
+      <ul class="text-left">
+        <li>Зворыгин Владимир</li>
+        <li>Диков Александр</li>
+        <li>Кузнецов Дмитрий</li>
+        <li>Миронов Андрей</li>
+        <li>Шарипов Руслан</li>
+      </ul>
+    </div>
+      <ul>
+        <image src="{% static 'img/axiom_logo.jpg' %}" width="300" class="rounded"/>
+        <image src="{% static 'img/NTO.jpg' %}" width="300" class="float-right"/>
+      </ul>
+  </div>
+  <div>
+<!--    <button class="btn btn-primary" type="submit" href="{% url 'form' %}">Войти</button>-->
+    <button class="btn btn-primary" onclick="window.location.href='{% url 'form' %}'">Перейти к форме</button>
+  </div>
+</div>
+{% endblock %}

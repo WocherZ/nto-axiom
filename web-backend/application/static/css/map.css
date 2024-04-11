@@ -1,0 +1,23 @@
+html,
+body,
+#container {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#reset {
+    padding: 4px 10px;
+    background: #00a81f;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(38, 38, 38, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+#reset:disabled {
+    background: #f2f2f2;
+    color: #6e6d6d;
+    cursor: default;
+}
