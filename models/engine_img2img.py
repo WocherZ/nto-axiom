@@ -110,8 +110,9 @@ class ImgToImg:
         # Run similarity Search
         column_names = [f'embedding_{i}' for i in range(512)]
         
-        data["cos_sim"] = data[column_names].values.apply(lambda x: cosine_similarity(query_vect, x))
-        data["cos_sim"] = data["cos_sim"].apply(lambda x: x[0][0])
+        # data["cos_sim"] = data[column_names].values.apply(lambda x: cosine_similarity(query_vect, x))
+        data["cos_sim"] = [cosine_similarity(query_vect.reshape(1, -1), row.reshape(1, -1))[0][0] for row in data[column_names].values]
+        # data["cos_sim"] = data["cos_sim"].apply(lambda x: x[0][0])
 
         filters = []
         n = 10

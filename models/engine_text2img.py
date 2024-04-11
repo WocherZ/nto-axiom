@@ -12,7 +12,7 @@ import base64
 from sklearn.metrics.pairwise import cosine_similarity
 import matplotlib.pyplot as plt
 
-class ruClipTopK:
+class RuClipTopK:
     def __init__(self, device, topK, templates):
         self.topK = topK
         self.device = device
@@ -56,7 +56,7 @@ class ruClipTopK:
             embedding_as_np = embedding.cpu().detach().numpy()
         return embedding_as_np
     
-    def get_top_N_images(self, 
+    def get_top_N_images_(self, 
                          query, 
                          data, 
                          top_K=100):
